@@ -1,23 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My first Vue page</title>
- 
- <link rel="stylesheet" href="css/style.css?version=0.1">">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vinz Szymone Roi V. Mendoza</title>
+
+  <!-- External CSS (optional) -->
+  <link rel="stylesheet" href="css/rwd.css">
+  <link rel="stylesheet" href="css/style.css?version=0.1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 { margin: 0; }
+    h2 { color: #4CAF50; }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .grid-container > div {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .header, .footer {
+      grid-column: 1 / -1;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu ul li {
+      margin: 10px 0;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: #4CAF50;
+    }
+
+    .facts img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Vue Example</h1>
+  <div class="grid-container">
 
-<p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+    <!-- Header -->
+    <div class="header">
+      <h1>Vinz Szymone Roi V. Mendoza</h1>
+    </div>
 
-<div id="app">
-  {{ message }}
-</div>
+    <!-- Menu -->
+    <div class="menu">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact Info</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#vue">Vue Example</a></li>
+      </ul>
+    </div>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Main Content -->
+    <div class="content">
+      <h2 id="about">About Me</h2>
+      <p>
+        I'm Szymone, 19 years old, studying BSIT (Bachelor of Science in Information Technology).
+        I'm passionate about technology and eager to expand my skills in IT.
+      </p>
 
-<script src="js/vue.js"></script
+      <h2 id="contact">Contact Information</h2>
+      <p>
+        Email:
+        <a href="mailto:mendozaszymone10@gmail.com">
+          mendozaszymone10@gmail.com
+        </a>
+      </p>
+
+      <h2 id="goals">Goals</h2>
+      <p>
+        My goal is to become a successful IT professional and own multiple cars one day.
+      </p>
+
+      <!-- Vue Section -->
+      <h2 id="vue">Vue Example</h2>
+      <p>
+        The message below is taken from <strong>data</strong> inside the Vue instance.
+      </p>
+
+      <div id="app">
+        {{ message }}
+      </div>
+    </div>
+
+    <!-- Picture Gallery -->
+    <div class="facts">
+      <h2>Picture Gallery</h2>
+      <img src="toffee 2.jpg" alt="My Collection">
+      <p>My collection</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Vinz Szymone Roi V. Mendoza</p>
+    </div>
+
+  </div>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- Vue App Script -->
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          message: 'Hello! This message is from Vue 3 🚀'
+        };
+      }
+    }).mount('#app');
+  </script>
 
 </body>
 </html>
